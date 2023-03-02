@@ -1,0 +1,28 @@
+@use 'common';
+
+.edit-list {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.edit-list-form {
+  @include common.labelColor;
+}
+
+.edit-list-title {
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+.delete-list-button {
+  @include common.button(80px);
+  margin: 25px 5px;
+}
+
+.edit-list-button {
+  @include common.button(80px);
+}
+
+.error-message {
+  @include common.errorText;
+}/*# sourceMappingURL=editList.css.map */

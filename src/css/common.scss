@@ -1,17 +1,18 @@
-@mixin button() {
+
+@mixin button($width) {
+  width: $width;
   background-color: #242F9B;
   color: #ffffff;
-  width: 100px;
   height: 40px;
   border-radius: 5px;
 }
-@mixin errorText() {
+@mixin tcRed() {
   color: red;
 }
-@mixin labelColor {
+@mixin labelColor() {
   color: #555555;
 }
-@mixin inputForm {
+@mixin inputForm() {
   width: 100%;
   font-size: large;
   height: 30px;

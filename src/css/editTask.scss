@@ -1,10 +1,16 @@
+@charset "utf-8";
+@use 'common';
+
+$blue: #242F9B;
+$white: #ffffff;
+
 .edit-task {
   width: 1000px;
   margin: 0 auto;
 }
 
 .edit-task-form {
-  color: #555555;
+  @include common.labelColor;
 }
 
 .edit-task-title, .edit-task-detail {
@@ -13,11 +19,7 @@
 }
 
 .delete-task-button {
-  width: 80px;
-  background-color: #242F9B;
-  color: #ffffff;
-  height: 40px;
-  border-radius: 5px;
+  @include common.button(80px);
   color: #ff3333;
   margin: 25px 5px;
   background: transparent;
@@ -25,13 +27,9 @@
 }
 
 .edit-task-button {
-  background-color: #242F9B;
-  color: #ffffff;
-  width: 80px;
-  height: 40px;
-  border-radius: 5px;
+  @include common.button;
 }
 
 .error-message {
-  color: #ff3333;
-}/*# sourceMappingURL=editTask.css.map */
+  @include common.tcRed;
+}
