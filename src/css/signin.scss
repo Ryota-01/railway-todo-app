@@ -1,31 +1,9 @@
 @charset "utf-8";
-%input-wrapper {
-  width: 500px;
-  margin: 25px auto;
-}
-%input-form {
-  width: 100%;
-  font-size: large;
-  height: 30px;
-  margin-bottom: 25px;
-}
-%button {
-  background-color: #242F9B;
-  color: #ffffff;
-  width: 100px;
-  height: 40px;
-  border-radius: 5px;
-}
-%label-color {
-  color: #555555;
-}
-$error-text: red;
-// ーーーーーーーーーーーーーーーーーーー
-// ここまでフォーマット定義
-// ーーーーーーーーーーーーーーーーーーー
+@use 'common';
 
 .signin {
-  @extend %input-wrapper;
+  width: 500px;
+  margin: 25px auto;
 }
 
 .signin-form {
@@ -33,17 +11,17 @@ $error-text: red;
 }
 
 .email-label, .password-label {
-  @extend %label-color; 
+  @include common.labelColor;
 }
 
 .email-input, .password-input {
-  @extend %input-form; 
+  @include common.inputForm;
 }
 
 .signin-button {
-  @extend %button
+  @include common.button;
 }
 
 .error-message {
-  color: $error-text;
+  @include common.errorText;
 }

@@ -3,6 +3,14 @@
   margin: 25px auto;
 }
 
+.signin-form {
+  margin: 25px 0;
+}
+
+.email-label, .password-label {
+  color: #555555;
+}
+
 .email-input, .password-input {
   width: 100%;
   font-size: large;
@@ -16,14 +24,6 @@
   width: 100px;
   height: 40px;
   border-radius: 5px;
-}
-
-.email-label, .password-label {
-  color: #555555;
-}
-
-.signin-form {
-  margin: 25px 0;
 }
 
 .error-message {

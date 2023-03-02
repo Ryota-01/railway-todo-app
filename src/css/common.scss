@@ -1,0 +1,19 @@
+@mixin button() {
+  background-color: #242F9B;
+  color: #ffffff;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+}
+@mixin errorText() {
+  color: red;
+}
+@mixin labelColor {
+  color: #555555;
+}
+@mixin inputForm {
+  width: 100%;
+  font-size: large;
+  height: 30px;
+  margin-bottom: 25px;
+}

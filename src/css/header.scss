@@ -1,11 +1,11 @@
 $height: 80px;
 $text-color: #ffffff;
-$background-color: #242F9B;
+$blue: #242F9B;
 
 .header {
   width: 100%;
   height: $height;
-  background-color: $background-color;
+  background-color: $blue;
   color: $text-color;
   display: flex;
   justify-content: space-between;
