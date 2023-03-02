@@ -1,16 +1,6 @@
-@charset "utf-8";
-
 .signin {
   width: 500px;
-  margin: 0 auto;
-}
-
-.signin-form {
-  margin: 25px 0;
-}
-
-.email-label, .password-label {
-  color: #555555;
+  margin: 25px auto;
 }
 
 .email-input, .password-input {
@@ -28,6 +18,14 @@
   border-radius: 5px;
 }
 
-.error-message {
-  color: #ff3333;
+.email-label, .password-label {
+  color: #555555;
 }
+
+.signin-form {
+  margin: 25px 0;
+}
+
+.error-message {
+  color: red;
+}/*# sourceMappingURL=signin.css.map */

@@ -1,0 +1,49 @@
+@charset "utf-8";
+%input-wrapper {
+  width: 500px;
+  margin: 25px auto;
+}
+%input-form {
+  width: 100%;
+  font-size: large;
+  height: 30px;
+  margin-bottom: 25px;
+}
+%button {
+  background-color: #242F9B;
+  color: #ffffff;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+}
+%label-color {
+  color: #555555;
+}
+$error-text: red;
+// ーーーーーーーーーーーーーーーーーーー
+// ここまでフォーマット定義
+// ーーーーーーーーーーーーーーーーーーー
+
+.signin {
+  @extend %input-wrapper;
+}
+
+.signin-form {
+  margin: 25px 0;
+}
+
+.email-label, .password-label {
+  @extend %label-color; 
+}
+
+.email-input, .password-input {
+  @extend %input-form; 
+}
+
+.signin-button {
+  @extend %button
+}
+
+.error-message {
+  color: $error-text;
+}

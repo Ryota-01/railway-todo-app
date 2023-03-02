@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { Header } from "../components/Header";
 import { url } from "../const";
-import "./home.css";
+import "../css/home.css";
 
 
 export const Home = () => {
