@@ -1,0 +1,23 @@
+$height: 80px;
+$text-color: #ffffff;
+$background-color: #242F9B;
+
+.header {
+  width: 100%;
+  height: $height;
+  background-color: $background-color;
+  color: $text-color;
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    line-height: $height;
+    padding-left: $height / 4;
+  }
+}
+
+.sign-out-button {
+  color: $text-color;
+  margin: auto 25px auto auto;
+}
+
+/*# sourceMappingURL=header.css.map */

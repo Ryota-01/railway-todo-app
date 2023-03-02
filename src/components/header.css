@@ -1,5 +1,3 @@
-@charset "utf-8";
-
 .header {
   width: 100%;
   height: 80px;
@@ -8,8 +6,14 @@
   display: flex;
   justify-content: space-between;
 }
+.header h1 {
+  line-height: 80px;
+  padding-left: 20px;
+}
 
 .sign-out-button {
   color: #ffffff;
   margin: auto 25px auto auto;
 }
+
+/*# sourceMappingURL=header.css.map */
