@@ -1,5 +1,7 @@
 @use 'common';
 
+$height: 100px;
+
 .header {
   width: 100%;
   height: $height;
@@ -10,12 +12,11 @@
 
   h1 {
     line-height: $height;
-
     padding-left: $height / 4;
   }
 
   .sign-out-button {
-    color: $white;
+    color: common.$white;
     margin: auto 25px auto auto;
   }
 }
