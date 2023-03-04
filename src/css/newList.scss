@@ -1,0 +1,18 @@
+@charset "utf-8";
+@use 'common';
+
+.new-list {
+  @include common.main;
+}
+
+.new-list-form {
+  @include common.labelColor;
+}
+
+.new-list-title {
+  @include common.form;
+}
+
+.new-list-button {
+  @include common.button(80px);
+}

@@ -1,7 +1,10 @@
 
+$blue: #242F9B;
+$white: #ffffff;
+
 @mixin button($width) {
   width: $width;
-  background-color: #242F9B;
+  background-color: $blue;
   color: #ffffff;
   height: 40px;
   border-radius: 5px;
@@ -17,4 +20,13 @@
   font-size: large;
   height: 30px;
   margin-bottom: 25px;
+}
+@mixin form() {
+  width: 300px;
+  margin-bottom: 25px;
+}
+
+@mixin main() {
+  width: 1000px;
+  margin: 0 auto;
 }

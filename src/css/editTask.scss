@@ -1,12 +1,8 @@
 @charset "utf-8";
 @use 'common';
 
-$blue: #242F9B;
-$white: #ffffff;
-
 .edit-task {
-  width: 1000px;
-  margin: 0 auto;
+  @include common.titleForm;
 }
 
 .edit-task-form {
@@ -14,8 +10,7 @@ $white: #ffffff;
 }
 
 .edit-task-title, .edit-task-detail {
-  width: 300px;
-  margin-bottom: 25px;
+  @include common.form;
 }
 
 .delete-task-button {
