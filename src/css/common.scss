@@ -1,32 +1,37 @@
 
 $blue: #242F9B;
 $white: #ffffff;
+$gray: #555555;
 
-@mixin button($width) {
+@mixin button($width:80px) {
   width: $width;
   background-color: $blue;
   color: #ffffff;
   height: 40px;
   border-radius: 5px;
 }
+
 @mixin tcRed() {
   color: red;
 }
+
 @mixin labelColor() {
   color: #555555;
 }
+
 @mixin inputForm() {
   width: 100%;
   font-size: large;
   height: 30px;
   margin-bottom: 25px;
 }
+
 @mixin form() {
   width: 300px;
   margin-bottom: 25px;
 }
 
-@mixin main() {
-  width: 1000px;
+@mixin main($width:1000px) {
+  width: $width;
   margin: 0 auto;
 }

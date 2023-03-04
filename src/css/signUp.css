@@ -1,28 +1,25 @@
 .signup {
   width: 500px;
   margin: 0 auto;
+  margin-top: 50px;
 }
-
-.signup-form {
+.signup .signup-form {
   margin: 25px 0;
   color: #555555;
 }
-
-.email-input, .name-input, .password-input {
+.signup .signup-form .email-input, .signup .signup-form .name-input, .signup .signup-form .password-input {
   width: 100%;
   font-size: large;
   height: 30px;
   margin-bottom: 25px;
 }
-
-.signup-button {
+.signup .signup-form .signup-button {
+  width: 100px;
   background-color: #242F9B;
   color: #ffffff;
-  width: 100px;
   height: 40px;
   border-radius: 5px;
 }
-
-.error-message {
-  color: #ff3333;
+.signup .error-message {
+  color: red;
 }/*# sourceMappingURL=signUp.css.map */

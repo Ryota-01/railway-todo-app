@@ -3,28 +3,28 @@
 
 .edit-task {
   @include common.titleForm;
-}
 
-.edit-task-form {
-  @include common.labelColor;
-}
+  .edit-task-form {
+    @include common.labelColor;
 
-.edit-task-title, .edit-task-detail {
-  @include common.form;
-}
-
-.delete-task-button {
-  @include common.button(80px);
-  color: #ff3333;
-  margin: 25px 5px;
-  background: transparent;
-  border: 1px solid red;
-}
-
-.edit-task-button {
-  @include common.button;
-}
-
-.error-message {
-  @include common.tcRed;
+    .edit-task-title, .edit-task-detail {
+      @include common.form;
+    }
+    
+    .delete-task-button {
+      @include common.button(80px);
+      color: #ff3333;
+      margin: 25px 5px;
+      background: transparent;
+      border: 1px solid red;
+    }
+    
+    .edit-task-button {
+      @include common.button;
+    }
+  }
+  
+  .error-message {
+    @include common.tcRed;
+  }
 }

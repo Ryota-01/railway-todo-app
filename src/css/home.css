@@ -4,11 +4,11 @@
   margin-top: 50px;
   list-style: none;
 }
-.taskList .list-header {
+.taskList .list-header, .taskList .tasks .tasks-header {
   display: flex;
   justify-content: space-between;
 }
-.taskList .list-header .list-menu {
+.taskList .list-header .list-menu, .taskList .tasks .tasks-header .list-menu {
   text-align: right;
 }
 .taskList .list-tab {
@@ -32,10 +32,6 @@
 }
 .taskList .tasks {
   margin-top: 25px;
-}
-.taskList .tasks .tasks-header {
-  display: flex;
-  justify-content: space-between;
 }
 .taskList .tasks .task-item {
   list-style-type: none;

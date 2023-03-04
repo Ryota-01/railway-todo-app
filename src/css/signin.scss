@@ -2,26 +2,27 @@
 @use 'common';
 
 .signin {
-  width: 500px;
-  margin: 25px auto;
+  @include common.main(500px);
+  margin-top: 50px;
+
+  .signin-form {
+    margin: 25px 0;
+  
+    .email-label, .password-label {
+      @include common.labelColor;
+    }
+    
+    .email-input, .password-input {
+      @include common.inputForm;
+    }
+    
+    .signin-button {
+      @include common.button;
+    }
+  }
+  
+  .error-message {
+    @include common.tcRed;
+  }
 }
 
-.signin-form {
-  margin: 25px 0;
-}
-
-.email-label, .password-label {
-  @include common.labelColor;
-}
-
-.email-input, .password-input {
-  @include common.inputForm;
-}
-
-.signin-button {
-  @include common.button;
-}
-
-.error-message {
-  @include common.errorText;
-}

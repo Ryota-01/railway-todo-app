@@ -1,23 +1,24 @@
-$height: 80px;
-$text-color: #ffffff;
-$blue: #242F9B;
+@use 'common';
 
 .header {
   width: 100%;
   height: $height;
-  background-color: $blue;
-  color: $text-color;
+  background-color: common.$blue;
+  color: common.$white;
   display: flex;
   justify-content: space-between;
+
   h1 {
     line-height: $height;
+
     padding-left: $height / 4;
+  }
+
+  .sign-out-button {
+    color: $white;
+    margin: auto 25px auto auto;
   }
 }
 
-.sign-out-button {
-  color: $text-color;
-  margin: auto 25px auto auto;
-}
 
 /*# sourceMappingURL=header.css.map */

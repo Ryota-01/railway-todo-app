@@ -11,7 +11,7 @@
 
     .list-menu {
       text-align: right;
-    }  
+    }
   }
   .list-tab {
     list-style: none;
@@ -39,8 +39,7 @@
     margin-top: 25px;
 
     .tasks-header {
-      display: flex;
-      justify-content: space-between;
+      @extend .list-header;
     }
 
     .task-item {
