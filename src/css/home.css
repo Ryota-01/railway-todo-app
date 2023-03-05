@@ -1,22 +1,26 @@
-.taskList {
+.wrapper {
+  width: 100%;
+  padding: 10px 0;
+}
+.wrapper .taskList {
   width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
   list-style: none;
 }
-.taskList .list-header, .taskList .tasks .tasks-header {
+.wrapper .taskList .list-header, .wrapper .taskList .tasks .tasks-header {
   display: flex;
   justify-content: space-between;
 }
-.taskList .list-header .list-menu, .taskList .tasks .tasks-header .list-menu {
+.wrapper .taskList .list-header .list-menu, .wrapper .taskList .tasks .tasks-header .list-menu {
   text-align: right;
 }
-.taskList .list-tab {
+.wrapper .taskList .list-tab {
   list-style: none;
   display: flex;
   overflow-x: auto;
 }
-.taskList .list-tab .list-tab-item {
+.wrapper .taskList .list-tab .list-tab-item {
   flex-shrink: 0;
   width: 100px;
   padding: 0 25px;
@@ -26,14 +30,14 @@
   justify-content: center;
   align-items: center;
 }
-.taskList .list-tab .active {
+.wrapper .taskList .list-tab .active {
   background: #242F9B;
   color: #ffffff;
 }
-.taskList .tasks {
+.wrapper .taskList .tasks {
   margin-top: 25px;
 }
-.taskList .tasks .task-item {
+.wrapper .taskList .tasks .task-item {
   list-style-type: none;
   height: 70px;
   width: calc(100% - 25px);
@@ -42,20 +46,20 @@
   font-size: large;
   border: solid 1px #ffffff;
 }
-.taskList .tasks .task-item-link {
+.wrapper .taskList .tasks .task-item-link {
   display: block;
   width: 100%;
   height: 100%;
   text-decoration: none;
   color: #000000;
 }
-.taskList .error-message {
+.wrapper .taskList .error-message {
   color: red;
 }
-.taskList .display-select-wrapper {
+.wrapper .taskList .display-select-wrapper {
   width: 100px;
   margin: 0 0 25px auto;
 }
-.taskList .display-select-wrapper .display-select {
+.wrapper .taskList .display-select-wrapper .display-select {
   width: 100%;
 }/*# sourceMappingURL=home.css.map */

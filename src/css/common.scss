@@ -3,6 +3,10 @@ $blue: #242F9B;
 $white: #ffffff;
 $gray: #555555;
 
+@mixin wrapper {
+  width: 100%;
+  padding: 10px 0;
+}
 @mixin button($width:80px) {
   width: $width;
   background-color: $blue;
