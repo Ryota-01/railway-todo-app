@@ -4,7 +4,7 @@
   margin-top: 50px;
   list-style: none;
 }
-@media screen and (min-width: 767px) {
+@media screen and (max-width: 1000px) {
   .taskList {
     width: 100%;
   }
@@ -44,8 +44,10 @@
 }
 @media screen and (max-width: 767px) {
   .list-tab {
+    max-width: 100%;
+    padding: 20px;
     display: block;
-    width: 100%;
+    margin: 0 auto;
   }
 }
 .list-tab .list-tab-item {
@@ -60,8 +62,9 @@
 }
 @media screen and (max-width: 767px) {
   .list-tab .list-tab-item {
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
+    padding: 10px 0 10px 10px;
     margin-bottom: 10px;
   }
 }

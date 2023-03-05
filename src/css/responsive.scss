@@ -1,13 +1,15 @@
-$mb: 767px;
+$sp: 767px;
+$tab: 1000px;
+
 
 @mixin tab {
-  @media screen and (min-width: $mb) {
+  @media screen and (max-width: $tab) {
     @content;
   }
 }
 
 @mixin sp {
-  @media screen and (max-width: $mb) {
+  @media screen and (max-width: $sp) {
     @content;
   }
 }

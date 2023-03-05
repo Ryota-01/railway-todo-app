@@ -1,25 +1,48 @@
 @use 'common';
+@use 'responsive';
+
+$width: 100%;
+
+@mixin list() {
+  width: $width;
+  margin-top: 30px;
+  text-align: center;
+}
 
 .edit-list {
   width: 1000px;
   margin: 0 auto;
-  
+  @include responsive.sp {
+    @include list();
+  }
+    
   .edit-list-form {
     @include common.labelColor;
+    @include responsive.sp {
+      @include list();
+    }
 
     .edit-list-title {
       @include common.form;
+      @include responsive.sp {
+        width: $width - 20% ;
+        margin-top: 20px;
+        padding: 10px 5px;
+      }
     }
     .delete-list-button {
       @include common.button(80px);
       margin: 25px 5px;
+      @include responsive.sp {
+        margin-top: 0;
+      }
     }
     .edit-list-button {
       @include common.button(80px);
     }
   }
   .error-message {
-    @include common.errorText;
+    @include common.tcRed;
   }/*# sourceMappingURL=editList.css.map */
 
 }

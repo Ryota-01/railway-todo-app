@@ -1,14 +1,40 @@
 @charset "utf-8";
 @use 'common';
+@use 'responsive';
+
+$width: 100%;
+
+@mixin list() {
+  width: $width;
+  margin-top: 30px;
+  text-align: center;
+}
+
 
 .edit-task {
-  @include common.titleForm;
+  @include common.main;
+  @include responsive.sp {
+    @include list();
+  }
 
   .edit-task-form {
     @include common.labelColor;
+    @include responsive.sp {
+      @include list();
+    }
+
+    div input:nth-of-type(2) {
+      display: inline-block;
+      margin-left: 10px;
+    }
 
     .edit-task-title, .edit-task-detail {
       @include common.form;
+      @include responsive.sp {
+        width: $width - 20% ;
+        margin-top: 20px;
+        padding: 10px 5px;
+      }
     }
     
     .delete-task-button {
