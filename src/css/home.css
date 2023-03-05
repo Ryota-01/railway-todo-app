@@ -1,26 +1,54 @@
-.wrapper {
-  width: 100%;
-  padding: 10px 0;
-}
-.wrapper .taskList {
+.taskList {
   width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
   list-style: none;
 }
-.wrapper .taskList .list-header, .wrapper .taskList .tasks .tasks-header {
+@media screen and (min-width: 767px) {
+  .taskList {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .taskList {
+    width: 100%;
+  }
+}
+.taskList .list-header, .taskList .tasks .tasks-header, .tasks .taskList .tasks-header {
   display: flex;
   justify-content: space-between;
 }
-.wrapper .taskList .list-header .list-menu, .wrapper .taskList .tasks .tasks-header .list-menu {
+@media screen and (max-width: 767px) {
+  .taskList .list-header, .taskList .tasks .tasks-header, .tasks .taskList .tasks-header {
+    display: block;
+    text-align: center;
+  }
+}
+.taskList .list-menu {
   text-align: right;
 }
-.wrapper .taskList .list-tab {
+@media screen and (max-width: 767px) {
+  .taskList .list-menu {
+    display: flex;
+    justify-content: center;
+  }
+  .taskList .list-menu p {
+    padding: 10px;
+  }
+}
+
+.list-tab {
   list-style: none;
   display: flex;
   overflow-x: auto;
 }
-.wrapper .taskList .list-tab .list-tab-item {
+@media screen and (max-width: 767px) {
+  .list-tab {
+    display: block;
+    width: 100%;
+  }
+}
+.list-tab .list-tab-item {
   flex-shrink: 0;
   width: 100px;
   padding: 0 25px;
@@ -30,14 +58,28 @@
   justify-content: center;
   align-items: center;
 }
-.wrapper .taskList .list-tab .active {
+@media screen and (max-width: 767px) {
+  .list-tab .list-tab-item {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+.list-tab .active {
   background: #242F9B;
   color: #ffffff;
 }
-.wrapper .taskList .tasks {
+
+.tasks {
   margin-top: 25px;
 }
-.wrapper .taskList .tasks .task-item {
+@media screen and (max-width: 767px) {
+  .tasks {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+.tasks .task-item {
   list-style-type: none;
   height: 70px;
   width: calc(100% - 25px);
@@ -46,20 +88,30 @@
   font-size: large;
   border: solid 1px #ffffff;
 }
-.wrapper .taskList .tasks .task-item-link {
+@media screen and (max-width: 767px) {
+  .tasks .task-item {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+.tasks .task-item-link {
   display: block;
   width: 100%;
   height: 100%;
   text-decoration: none;
   color: #000000;
 }
-.wrapper .taskList .error-message {
+
+.error-message {
   color: red;
 }
-.wrapper .taskList .display-select-wrapper {
+
+.display-select-wrapper {
   width: 100px;
   margin: 0 0 25px auto;
 }
-.wrapper .taskList .display-select-wrapper .display-select {
+.display-select-wrapper .display-select {
   width: 100%;
 }/*# sourceMappingURL=home.css.map */

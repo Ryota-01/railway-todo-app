@@ -1,0 +1,13 @@
+$mb: 767px;
+
+@mixin tab {
+  @media screen and (min-width: $mb) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $mb) {
+    @content;
+  }
+}

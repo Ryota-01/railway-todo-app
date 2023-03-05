@@ -1,25 +1,49 @@
 @use 'common';
+@use 'responsive';
 
-.wrapper {
-  @include common.wrapper;
-  
   .taskList {
     @include common.main;
     margin-top: 50px;
     list-style: none;
-  
+
+    @include responsive.tab {
+      width: 100%;
+    }
+    @include responsive.sp {
+      width: 100%;
+    }
+      
     .list-header {
       display: flex;
       justify-content: space-between;
-  
-      .list-menu {
-        text-align: right;
+
+      @include responsive.sp {
+        display: block;
+        text-align: center;
       }
     }
+      .list-menu {
+        text-align: right;
+
+        @include responsive.sp {
+          display: flex;
+          justify-content: center;
+          p {
+            padding: 10px;
+          }
+        }
+      }
+    }
+
     .list-tab {
       list-style: none;
       display: flex;
       overflow-x: auto;
+
+      @include responsive.sp {
+        display: block;
+        width: 100%;
+      }
   
       .list-tab-item {
         flex-shrink: 0;
@@ -30,6 +54,12 @@
         border: solid 1px common.$blue;
         justify-content: center;
         align-items: center;
+        
+        @include responsive.sp {
+          max-width: 100%;
+          margin: 0 auto;
+          margin-bottom: 10px;
+        }
       }
   
       .active {
@@ -40,6 +70,10 @@
   
     .tasks {
       margin-top: 25px;
+      @include responsive.sp {
+        max-width: 100%;
+        padding: 20px;
+      }
   
       .tasks-header {
         @extend .list-header;
@@ -53,7 +87,15 @@
         padding-left: 25px;
         font-size: large;
         border: solid 1px common.$white;
+        
+        @include responsive.sp {
+          max-width: 100%;
+          height: auto;
+          margin: 0 auto;
+          padding: 10px;
+        }
       }
+      
       .task-item-link {
         display: block;
         width: 100%;
@@ -68,11 +110,11 @@
     .display-select-wrapper {
       width: 100px;
       margin: 0 0 25px auto;
+
+      @include responsive.sp {
+      }
   
       .display-select {
         width: 100%;
       }
     }
-  }
-
-}
