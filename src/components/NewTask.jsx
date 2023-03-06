@@ -17,6 +17,8 @@ export const NewTask = () => {
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
   const handleSelectList = (id) => setSelectListId(id);
+  const [date, setDate] = useState(new Date());
+
   const onCreateTask = () => {
     const data = {
       title: title,
@@ -67,6 +69,12 @@ export const NewTask = () => {
           </select><br />
           <label>タイトル</label><br />
           <input type="text" onChange={handleTitleChange} className="new-task-title" /><br />
+          <label>期限</label><br />
+          <input
+            type="datetime-local"
+            name="limit"
+            onChange={handleTitleChange}
+            className="new-task-title" /><br />
           <label>詳細</label><br />
           <textarea type="text" onChange={handleDetailChange} className="new-task-detail" /><br />
           <button type="button" className="new-task-button" onClick={onCreateTask}>作成</button>
