@@ -14,6 +14,8 @@ export const Home = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [cookies] = useCookies();
   const handleIsDoneDisplayChange = (e) => setIsDoneDisplay(e.target.value);
+  console.log(tasks)
+
   useEffect(() => {
     axios
       .get(`${url}/lists`, {
@@ -144,6 +146,8 @@ const Tasks = (props) => {
                 className="task-item-link"
               >
                 {task.title}
+                <br />
+                {task.limit}
                 <br />
                 {task.done ? "完了" : "未完了"}
               </Link>
