@@ -48,24 +48,25 @@
       .list-tab-item {
         flex-shrink: 0;
         width: 100px;
-        padding: 0 25px;
         text-overflow: normal;
         margin-right: 5px;
         border: solid 1px common.$blue;
         justify-content: center;
         align-items: center;
-        .list-tab-btn[aria-selected="true"] {
-          background: red;
-        }
-        .list-tab-btn[aria-selected="false"] {
-          background: yellow;
+
+        .list-tab-btn {
+          width: 100%;
+          padding: 0 20px;
         }
         
         @include responsive.sp {
           width: 100%;
           margin: 0 auto;
-          padding: 10px 0 10px 10px;
           margin-bottom: 10px;
+          .list-tab-btn {
+            width: 100%;
+            padding: 10px 0 10px 10px;
+          }
         }
       }
   

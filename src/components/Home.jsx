@@ -98,9 +98,7 @@ export const Home = () => {
                     <button
                       className="list-tab-btn"
                       role="tab"
-                      // role="option"
                       tabIndex="0"
-                      // aria-selected="true"
                       aria-controls="panel1"
                     >
                     {list.title}
@@ -124,7 +122,6 @@ export const Home = () => {
                 </select>
               </div>
               <Tasks
-                id="panel1"
                 tasks={tasks}
                 selectListId={selectListId}
                 isDoneDisplay={isDoneDisplay}
@@ -140,7 +137,6 @@ export const Home = () => {
 // 表示するタスク
 const Tasks = (props) => {
   const { tasks, selectListId, isDoneDisplay } = props;
-  console.log(tasks)
   if (tasks === null) return <></>;
 
   if (isDoneDisplay == "done") {
@@ -182,7 +178,7 @@ const Tasks = (props) => {
             >
               {task.title}
               <br />
-              {task.limit}
+              {new Date(task.limit).toLocaleString()}
               <br />
               {task.done ? "完了" : "未完了"}
             </Link>

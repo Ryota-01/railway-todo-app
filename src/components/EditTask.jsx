@@ -18,14 +18,15 @@ export const EditTask = () => {
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
   const handleIsDoneChange = (e) => setIsDone(e.target.value === "done");
-  const handleLimitChange = (e) => {
-    const date = new Date(e.target.value);
-    const updateDate = date.getTime()+9*60*60*1000;
-    const time = new Date(updateDate).toISOString().split('.')[0];
-    setLimits(time)
-  }
-  
+  const handleLimitChange = (e) => setLimits(e.target.value);
 
+  // const handleLimitChange = (e) => {
+  //   const date = new Date(e.target.value);
+  //   const updateDate = date.getTime()+9*60*60*1000;
+  //   const time = new Date(updateDate).toISOString().split('.')[0];
+  //   setLimits(time)
+  // }
+  
   const onUpdateTask = () => {
     console.log(isDone)
     console.log(new Date(limits))
@@ -77,7 +78,9 @@ export const EditTask = () => {
       setIsDone(task.done)
       setLimits(() => {
         const date = new Date(task.limit);
-        const dateValue = date.toISOString().substring(0, 19);
+        const updateDate = date.getTime()+9*60*60*1000;
+        console.log(updateDate)
+        const dateValue = new Date(updateDate).toISOString().split('.')[0];
         setLimits(dateValue);
         }
       )
