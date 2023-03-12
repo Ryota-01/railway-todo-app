@@ -54,6 +54,12 @@
         border: solid 1px common.$blue;
         justify-content: center;
         align-items: center;
+        .list-tab-btn[aria-selected="true"] {
+          background: red;
+        }
+        .list-tab-btn[aria-selected="false"] {
+          background: yellow;
+        }
         
         @include responsive.sp {
           width: 100%;

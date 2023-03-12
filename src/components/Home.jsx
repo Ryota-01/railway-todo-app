@@ -14,7 +14,6 @@ export const Home = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [cookies] = useCookies();
   const handleIsDoneDisplayChange = (e) => setIsDoneDisplay(e.target.value);
-  console.log(tasks)
 
   useEffect(() => {
     axios
@@ -86,7 +85,7 @@ export const Home = () => {
                 </p>
               </div>
             </div>
-            <ul className="list-tab">
+            <ul className="list-tab" role="tablist">
               {lists.map((list, key) => {
                 const isActive = list.id === selectListId;
                 return (
@@ -94,8 +93,18 @@ export const Home = () => {
                     key={key}
                     className={`list-tab-item ${isActive ? "active" : ""}`}
                     onClick={() => handleSelectList(list.id)}
-                  >
+                    role="presentation"
+                    >
+                    <button
+                      className="list-tab-btn"
+                      role="tab"
+                      // role="option"
+                      tabIndex="0"
+                      // aria-selected="true"
+                      aria-controls="panel1"
+                    >
                     {list.title}
+                    </button>
                   </li>
                 );
               })}
@@ -115,6 +124,7 @@ export const Home = () => {
                 </select>
               </div>
               <Tasks
+                id="panel1"
                 tasks={tasks}
                 selectListId={selectListId}
                 isDoneDisplay={isDoneDisplay}
@@ -130,6 +140,7 @@ export const Home = () => {
 // 表示するタスク
 const Tasks = (props) => {
   const { tasks, selectListId, isDoneDisplay } = props;
+  console.log(tasks)
   if (tasks === null) return <></>;
 
   if (isDoneDisplay == "done") {
@@ -170,6 +181,8 @@ const Tasks = (props) => {
               className="task-item-link"
             >
               {task.title}
+              <br />
+              {task.limit}
               <br />
               {task.done ? "完了" : "未完了"}
             </Link>

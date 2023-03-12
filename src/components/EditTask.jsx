@@ -12,17 +12,29 @@ export const EditTask = () => {
   const [cookies] = useCookies();
   const [title, setTitle] = useState("");
   const [detail, setDetail] = useState("");
+  const [limits, setLimits] = useState("");
   const [isDone, setIsDone] = useState();
   const [errorMessage, setErrorMessage] = useState("");
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
   const handleIsDoneChange = (e) => setIsDone(e.target.value === "done");
+  const handleLimitChange = (e) => {
+    const date = new Date(e.target.value);
+    const updateDate = date.getTime()+9*60*60*1000;
+    const time = new Date(updateDate).toISOString().split('.')[0];
+    setLimits(time)
+  }
+  
+
   const onUpdateTask = () => {
     console.log(isDone)
+    console.log(new Date(limits))
+
     const data = {
       title: title,
       detail: detail,
-      done: isDone
+      done: isDone,
+      limit: new Date(limits),
     }
 
     axios.put(`${url}/lists/${listId}/tasks/${taskId}`, data, {
@@ -31,7 +43,6 @@ export const EditTask = () => {
       }
     })
     .then((res) => {
-      console.log(res.data)
       navigate("/");
     })
     .catch((err) => {
@@ -64,6 +75,12 @@ export const EditTask = () => {
       setTitle(task.title)
       setDetail(task.detail)
       setIsDone(task.done)
+      setLimits(() => {
+        const date = new Date(task.limit);
+        const dateValue = date.toISOString().substring(0, 19);
+        setLimits(dateValue);
+        }
+      )
     })
     .catch((err) => {
       setErrorMessage(`タスク情報の取得に失敗しました。${err}`);
@@ -77,10 +94,16 @@ export const EditTask = () => {
         <h2>タスク編集</h2>
         <p className="error-message">{errorMessage}</p>
         <form className="edit-task-form">
+
           <label>タイトル</label><br />
           <input type="text" onChange={handleTitleChange} className="edit-task-title" value={title} /><br />
+
+          <label>期限</label><br />
+          <input type="datetime-local" onChange={handleLimitChange} className="edit-task-date" value={limits} /><br />
+
           <label>詳細</label><br />
           <textarea type="text" onChange={handleDetailChange} className="edit-task-detail" value={detail} /><br />
+
           <div>
             <input type="radio" id="todo" name="status" value="todo" onChange={handleIsDoneChange} checked={isDone === false ? "checked" : ""} />未完了
             <input type="radio" id="done" name="status" value="done" onChange={handleIsDoneChange} checked={isDone === true ? "checked" : ""} />完了

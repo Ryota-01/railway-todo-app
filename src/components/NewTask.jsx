@@ -11,23 +11,21 @@ export const NewTask = () => {
   const [lists, setLists] = useState([]);
   const [title, setTitle] = useState("");
   const [detail, setDetail] = useState("");
-  const [limit, setLimit] = useState(new Date());
+  const [limits, setLimits] = useState(new Date());
   const [errorMessage, setErrorMessage] = useState("");
   const [cookies] = useCookies();
   const navigate = useNavigate();
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
-  const handleLimitChange = (e) => setLimit(e.target.value);
   const handleSelectList = (id) => setSelectListId(id);
-  console.log(limit);
-
+  const handleLimitChange = (e) => setLimits(e.target.value);
 
   const onCreateTask = () => {
     const data = {
       title: title,
       detail: detail,
-      limit: limit,
       done: false,
+      limit: new Date(limits),
     };
 
     axios.post(`${url}/lists/${selectListId}/tasks`, data, {
@@ -71,6 +69,7 @@ export const NewTask = () => {
               <option key={key} className="list-item" value={list.id}>{list.title}</option>
             ))}
           </select><br />
+          
           <label>タイトル</label><br />
           <input
             type="text"
@@ -81,9 +80,8 @@ export const NewTask = () => {
           <input
             type="datetime-local"
             onChange={handleLimitChange}
-            className="new-task-title" /><br />
-
-            <p>{process.env.REACT_APP_API_URL}</p>
+            className="new-task-date" />
+            <br />
 
           <label>詳細</label><br />
           <textarea
