@@ -75,14 +75,10 @@ export const Home = () => {
             <div className="list-header">
               <h2>リスト一覧</h2>
               <div className="list-menu">
-                <p>
-                  <Link to="/list/new">リスト新規作成</Link>
-                </p>
-                <p>
-                  <Link to={`/lists/${selectListId}/edit`}>
+                  <Link to="/list/new" className="link-btn">リスト新規作成</Link>
+                  <Link to={`/lists/${selectListId}/edit`}  className="link-btn">
                     選択中のリストを編集
                   </Link>
-                </p>
               </div>
             </div>
             <ul className="list-tab" role="tablist">
@@ -110,7 +106,7 @@ export const Home = () => {
             <div className="tasks">
               <div className="tasks-header">
                 <h2>タスク一覧</h2>
-                <Link to="/task/new">タスク新規作成</Link>
+                <Link to="/task/new"  className="link-btn">タスク新規作成</Link>
               </div>
               <div className="display-select-wrapper">
                 <select
@@ -176,11 +172,9 @@ const Tasks = (props) => {
               to={`/lists/${selectListId}/tasks/${task.id}`}
               className="task-item-link"
             >
-              {task.title}
-              <br />
-              {new Date(task.limit).toLocaleString()}
-              <br />
-              {task.done ? "完了" : "未完了"}
+              <p className="title">{task.title}</p>
+              <p className="status">{task.done ? "完了" : "未完了"}</p>
+              <p className="limit">{new Date(task.limit).toLocaleString()}</p>
             </Link>
           </li>
         ))}
