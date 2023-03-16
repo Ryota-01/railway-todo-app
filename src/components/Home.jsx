@@ -132,6 +132,7 @@ export const Home = () => {
 
 // 表示するタスク
 const Tasks = (props) => {
+
   const { tasks, selectListId, isDoneDisplay } = props;
   if (tasks === null) return <></>;
 
@@ -160,13 +161,34 @@ const Tasks = (props) => {
     );
   }
 
+
+  // const limit = tasks.map(function(e) {return e["limit"]});
+  // console.log(limit);
+
+
   return (
     <ul>
       {tasks
         .filter((task) => {
           return task.done === false;
-        })
-        .map((task, key) => (
+        }).map((task, key) => {
+
+          //設定した期日（ブラウザ表示用）
+          const limit = new Date(task.limit).toLocaleString();
+
+          //設定した期日を数値に変換
+          const targetDate = new Date(limit).getTime()
+          
+          //残日数の計算
+          const diffMSec = targetDate - Date.now();
+          const diffDays = diffMSec / (1000 * 60 * 60 * 24) -1 ;
+          const diffTimes = diffMSec / (1000 * 60 * 60) % 24 -1;
+          const diffMinutes = diffMSec / (1000 * 60) % 60;
+          const showDays = Math.ceil(diffDays);
+          const showTimes = Math.ceil(diffTimes);
+          const showMinutes = Math.ceil(diffMinutes);
+        
+          return (
           <li key={key} className="task-item">
             <Link
               to={`/lists/${selectListId}/tasks/${task.id}`}
@@ -174,10 +196,12 @@ const Tasks = (props) => {
             >
               <p className="title">{task.title}</p>
               <p className="status">{task.done ? "完了" : "未完了"}</p>
-              <p className="limit">{new Date(task.limit).toLocaleString()}</p>
+              <p className="limit">詳細：{task.detail}</p>
+              <p className="limit">期限：{limit}（残り{showDays}日{showTimes}時間{showMinutes}分）</p>
+              {/* <p className="limit">残り日数：{showDays}日と{showTimes}時間{showMinutes}分</p> */}
             </Link>
           </li>
-        ))}
+        )})}
     </ul>
   );
 };
